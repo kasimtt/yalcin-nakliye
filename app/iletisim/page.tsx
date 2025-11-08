@@ -2,9 +2,9 @@ import ContactForm from "./ContactForm";
 import { PhoneIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
 
 export const metadata = {
-  title: "İletişim — Yalçın Nakliye (Çiğli, Bayraktar, Menemen, İzmir)",
+  title: "İletişim — Yalçın Nakliye (Çiğli, Bayraklı, Menemen, İzmir)",
   description:
-    "Yalçın Nakliye ile iletişime geçin — Çiğli, Bayraktar, Menemen ve İzmir bölgesinde ücretsiz keşif ve teklif. Telefon, e-posta ve iletişim formu.",
+    "Yalçın Nakliye ile iletişime geçin — Çiğli, Bayraklı, Menemen ve İzmir bölgesinde ücretsiz keşif ve teklif. Telefon, e-posta ve iletişim formu.",
 };
 
 export default function IletisimPage() {
@@ -52,7 +52,7 @@ export default function IletisimPage() {
 
             <div className="mt-6">
               <h3 className="text-sm font-semibold text-[var(--brand)]">Hizmet Bölgelerimiz</h3>
-              <p className="text-sm text-[var(--muted)] mt-2">Çiğli, Bayraktar, Menemen ve tüm İzmir bölgesi. Ayrıca İzmir'den şehirler arası taşımacılık yapıyoruz.</p>
+              <p className="text-sm text-[var(--muted)] mt-2">Çiğli, Bayraklı, Menemen ve tüm İzmir bölgesi. Ayrıca İzmir'den şehirler arası taşımacılık yapıyoruz.</p>
             </div>
           </div>
 
@@ -83,7 +83,7 @@ export default function IletisimPage() {
   "@type": "LocalBusiness",
   "name": "Yalçın Nakliye",
   "telephone": "+905399363912",
-  "areaServed": ["Çiğli", "Bayraktar", "Menemen", "İzmir"],
+  "areaServed": ["Çiğli", "Bayraklı", "Menemen", "İzmir"],
   "description": "Yalçın Nakliye - Çiğli ve İzmir çevresinde ev ve ofis taşıma hizmetleri. Asansörlü taşıma ve paketleme hizmetleri.",
   "geo": {
     "@type": "GeoCoordinates",

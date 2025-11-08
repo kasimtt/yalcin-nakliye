@@ -6,9 +6,9 @@ import Lightbox from "./components/Lightbox";
 
 export const metadata = {
   title:
-    "Yalçın Nakliye — Çiğli, Bayraktar, Menemen ve İzmir Nakliye Hizmetleri",
+    "Yalçın Nakliye — Çiğli, Bayraklı, Menemen ve İzmir Nakliye Hizmetleri",
   description:
-    "Yalçın Nakliye — Çiğli, Bayraktar, Menemen ve İzmir bölgesinde güvenilir ev ve ofis taşıma hizmetleri. Asansörlü taşıma ve paketleme hizmetleri. Hemen iletişime geçin.",
+    "Yalçın Nakliye — Çiğli, Bayraklı, Menemen ve İzmir bölgesinde güvenilir ev ve ofis taşıma hizmetleri. Asansörlü taşıma ve paketleme hizmetleri. Hemen iletişime geçin.",
 };
 
 export default function Home() {
@@ -21,7 +21,7 @@ export default function Home() {
               Yalçın Nakliye
             </h1>
             <p className="mt-4 text-lg text-zinc-700 dark:text-zinc-300 leading-relaxed">
-              Çiğli, Bayraktar, Menemen ve tüm İzmir bölgesinde profesyonel
+              Çiğli, Bayraklı, Menemen ve tüm İzmir bölgesinde profesyonel
               nakliye hizmetleri. Asansörlü taşıma ve paketleme hizmetleri
               hizmetlerle yanınızdayız.
             </p>
@@ -143,7 +143,7 @@ export default function Home() {
   "@type": "LocalBusiness",
   "name": "Yalçın Nakliye",
   "telephone": "+905399363912",
-  "areaServed": ["Çiğli", "Bayraktar", "Menemen", "İzmir"],
+  "areaServed": ["Çiğli", "Bayraklı", "Menemen", "İzmir"],
   "description": "Yalçın Nakliye - Çiğli ve İzmir çevresinde ev ve ofis taşıma hizmetleri. Şehirler arası nakliye de yapılır.",
   "geo": {
     "@type": "GeoCoordinates",
@@ -158,7 +158,7 @@ export default function Home() {
         <section className="mt-12 card bg-white/90 dark:bg-surface rounded-2xl p-6 shadow-md">
           <h2 className="text-2xl font-semibold">Hizmet Bölgelerimiz</h2>
           <p className="mt-3 text-zinc-700 dark:text-zinc-300">
-            Öne çıkan bölgeler: <strong>Çiğli</strong>, <strong>Bayraktar</strong>,{' '}
+            Öne çıkan bölgeler: <strong>Çiğli</strong>, <strong>Bayraklı</strong>,{' '}
             <strong>Menemen</strong> ve tüm <strong>İzmir</strong> çevresi. İzmirden
             şehirler arası nakliye hizmetleri de sunmaktayız.
           </p>

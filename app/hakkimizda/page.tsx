@@ -1,6 +1,6 @@
 export const metadata = {
   title: "Hakkımızda — Yalçın Nakliye",
-  description: "Yalçın Nakliye hakkında: tecrübemiz, hizmet anlayışımız ve çalışma bölgelerimiz (Çiğli, Bayraktar, Menemen, İzmir).",
+  description: "Yalçın Nakliye hakkında: tecrübemiz, hizmet anlayışımız ve çalışma bölgelerimiz (Çiğli, Bayraklı, Menemen, İzmir).",
 };
 
 export default function Hakkimizda() {
@@ -37,7 +37,7 @@ export default function Hakkimizda() {
         <section className="mt-6">
           <h2 className="text-xl font-semibold">Hizmet Bölgelerimiz</h2>
           <p className="mt-2 text-zinc-700 dark:text-zinc-300">
-            Çiğli, Bayraktar, Menemen ve tüm İzmir bölgesi.
+            Çiğli, Bayraklı, Menemen ve tüm İzmir bölgesi.
           </p>
         </section>
       </main>
