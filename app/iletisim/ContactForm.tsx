@@ -13,7 +13,7 @@ export default function ContactForm() {
     const subject = encodeURIComponent("Yalçın Nakliye - İletişim Talebi");
     const body = encodeURIComponent(`İsim: ${name}\nTelefon: ${phone}\n\n${message}`);
     // mailto fallback
-    window.location.href = `mailto:info@yalcinnakliye.example?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:abdulbasidyalcin006@gmail.com?subject=${subject}&body=${body}`;
   }
 
   return (

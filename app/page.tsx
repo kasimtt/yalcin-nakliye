@@ -107,8 +107,8 @@ export default function Home() {
 
           <div className="mt-4 text-zinc-700 dark:text-zinc-300">
             <p>Telefon: <a href="tel:+905399363912" className="font-medium">+905399363912</a></p>
-            <p className="mt-2">E-posta: <a href="mailto:info@yalcinnakliye.example">info@yalcinnakliye.example</a></p>
-            <p className="mt-2">Adres: Uğurmumcu mah 8980 sk no:7 d 3 Çiğli / İzmir</p>
+            <p className="mt-2">E-posta: <a href="mailto:abdulbasidyalcin006@gmail.com">abdulbasidyalcin006@gmail.com</a></p>
+            <p className="mt-2">Adres: Uğurmumcu mahallesi 8980 sk no:7 d: 3 Çiğli / İzmir</p>
           </div>
 
           <ContactForm />

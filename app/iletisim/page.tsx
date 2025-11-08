@@ -41,7 +41,7 @@ export default function IletisimPage() {
 
               <div>
                 <div className="text-sm text-[var(--muted)]">E-posta</div>
-                <a href="mailto:info@yalcinnakliye.example" className="text-sm text-[var(--brand)]">info@yalcinnakliye.example</a>
+                <a href="mailto:abdulbasidyalcin006@gmail.com" className="text-sm text-[var(--brand)]">abdulbasidyalcin006@gmail.com</a>
               </div>
 
               <div>
