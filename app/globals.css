@@ -1,0 +1,248 @@
+@import "tailwindcss";
+
+:root {
+  /* Design language: navy (trust) + orange (accent) */
+  /* Warmer, slightly red-leaning palette to convey warmth and trust */
+  --background: #fff3f2; /* warmer, soft pink/peach background */
+  --brand: #0F2A43; /* lacivert (kept) */
+  --accent: #FF7A24; /* turuncumsu accent (sıcak, güven veren turuncu) */
+  --foreground: #000000; /* tam siyah - metinlerin görünür olması için */
+  --surface: #fff6f6; /* warm surface slightly off-white with a pink tint */
+  --muted: #6b7280; /* muted text */
+  --on-accent: #ffffff; /* text on accent */
+}
+
+/* --- Tema alternatifleri ---
+   Aşağıda üç hazır tema tanımladım. Her biri aynı değişken isimlerini
+   kullanıyor; body üzerinde ilgili sınıfı (`theme-red`, `theme-terracotta`,
+   `theme-bordo`) ekleyerek etkinleştirebilirsiniz. Varsayılan :root önceki
+   değerleri içerir ve `theme-red` layout'da seçili olarak uygulanacaktır.
+*/
+
+.theme-red {
+  --background: #f6f1c4; /* hafif pembe/şeftali */
+  --accent: #d07b7b; /* canlı kırmızı - güven + aciliyet */
+  --surface: #e5dbdb; /* çok hafif pembe yüzey */
+}
+
+.theme-terracotta {
+  --background: #fff6f0; /* krem-bej, toprak hissi */
+  --accent: #D36B3B; /* terracotta / toprak tonlu turuncu-kırmızı */
+  --surface: #fff7f2; /* hafif krem yüzey */
+}
+
+.theme-bordo {
+  --background: #fff6f7; /* çok açık pembe krem */
+  --accent: #d5c7cb; /* bordo / koyu kırmızı-mürdüm */
+  --surface: #fff7f9; /* çok hafif rose yüzey */
+}
+
+/* font variables injected via layout.tsx using next/font */
+/* theme variables are defined above */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ensure anchored sections are visible below the navbar */
+section[id] {
+  scroll-margin-top: 80px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+  --background: #384b66;
+  --brand: #040505;
+  --accent: #ff8a5b;
+  --surface: #071827;
+  --muted: #1a1c1f;
+  --on-accent: #071422;
+  --foreground: #1e1c1a;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial;
+  line-height: 1.6;
+}
+
+/* Make sections a bit translucent to separate from background */
+.section-surface {
+  background: var(--surface);
+  border-radius: 1rem;
+}
+
+/* Ensure text inside surfaces adapts to foreground color */
+.card, .section-surface, section[id] {
+  color: var(--foreground) !important;
+  background: var(--surface) !important;
+}
+
+/* Ensure direct children inside cards/sections inherit readable color */
+.card * , section[id] * {
+  color: var(--foreground) !important;
+}
+
+/* Ensure main content uses the readable foreground color even when Tailwind
+   utility classes (e.g., text-zinc-700) are present. This makes site texts
+   consistently darker for better contrast on warm backgrounds. */
+main, main * {
+  color: var(--foreground) !important;
+}
+
+/* Force common text elements to use the foreground color while allowing
+   links (a) and buttons to keep their accent colors. This addresses cases
+   where utility classes or dark-mode rules make body text hard to see. */
+main h1,
+main h2,
+main h3,
+main h4,
+main p,
+main li,
+main label,
+main span,
+main div {
+  color: var(--foreground) !important;
+}
+
+/* Links inside sections use brand color for visibility; CTAs keep accent classes */
+.card a, section[id] a {
+  color: var(--brand) !important;
+  text-decoration: underline;
+}
+
+/* Small helper utilities (used by existing components) */
+/* Theme helpers */
+.bg-brand { background: var(--brand) !important; }
+.text-on-brand { color: var(--on-accent) !important; }
+.bg-accent { background: var(--accent) !important; }
+.text-on-accent { color: var(--on-accent) !important; }
+.muted { color: var(--muted) !important; }
+
+/* Buttons */
+.btn-primary { background: var(--accent); color: var(--on-accent); border-radius: 12px; padding: 0.6rem 1rem; }
+.btn-ghost { background: transparent; border: 1px solid rgba(255,122,36,0.12); padding: 0.6rem 1rem; border-radius: 12px; }
+
+/* small utility: text using accent color */
+.text-accent { color: var(--accent) !important; }
+
+/* nav link styles + active state */
+.nav-link { padding: 0.25rem 0.35rem; color: inherit; }
+.nav-link.active { color: var(--accent) !important; }
+
+/* Card hover elevation */
+.card { transition: transform .18s ease, box-shadow .18s ease; border-radius: 1rem; }
+.card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(15,42,67,0.12); }
+
+/* Hero animation */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-animate { animation: fadeUp .7s ease both; }
+
+/* Hero image overlay wrapper */
+.hero-image-wrapper { position: relative; overflow: hidden; border-radius: .75rem; }
+.hero-image-wrapper img, .hero-image-wrapper .next-image {
+  display: block;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15,42,67,0.08) 0%, rgba(0,0,0,0.28) 100%);
+  pointer-events: none;
+}
+
+/* Gallery thumbnail helpers: use for the anchor wrapper around thumbnails.
+   - cursor: pointer so users know it's interactive
+   - subtle hover scale for polish
+   - ensures overflow is hidden and images visually fill the box
+   - data-lightbox attribute is used as a hook for a custom modal/lightbox
+     you said you'll implement. Anchor fallback opens the full image in a
+     new tab for accessibility if modal is not present. */
+.gallery-item {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  border-radius: .5rem;
+  cursor: pointer;
+}
+.gallery-item > div { /* the immediate relative wrapper used with next/image fill */
+  transition: transform .45s cubic-bezier(.2,.9,.3,1);
+}
+.gallery-item img, .gallery-item .next-image {
+  transition: transform .45s cubic-bezier(.2,.9,.3,1);
+  will-change: transform;
+}
+.gallery-item:hover > div .next-image, .gallery-item:hover img {
+  transform: scale(1.06);
+}
+
+/* Lightbox styles */
+.lightbox-overlay { background: rgba(0,0,0,0.6); }
+.lightbox-image { width: 100%; height: auto; display: block; }
+.lightbox-close { border: none; cursor: pointer; }
+.lightbox-nav { border: none; cursor: pointer; }
+
+
+
+/* Stat badge styles */
+.stat-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.75rem;
+  border-radius: 0.75rem;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-weight: 600;
+  box-shadow: 0 8px 22px rgba(14,20,24,0.12);
+  border: 1px solid rgba(0,0,0,0.06);
+  transform-origin: center;
+  transition: transform .18s ease, box-shadow .18s ease;
+  animation: badgePop .6s cubic-bezier(.2,.9,.3,1) both;
+}
+.stat-badge:hover { transform: translateY(-4px); box-shadow: 0 14px 38px rgba(14,20,24,0.14); filter: brightness(1.03); }
+
+/* badge ikon transition/rotate */
+.stat-badge .badge-icon { transition: transform .28s cubic-bezier(.2,.9,.3,1); }
+.stat-badge:hover .badge-icon { transform: rotate(20deg) scale(1.05); }
+
+/* container helper to center badges */
+.stat-badges {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.badge-icon {
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 18px;
+}
+
+@keyframes badgePop {
+  0% { transform: scale(.96); opacity: 0; }
+  60% { transform: scale(1.04); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+/* small muted testimonial style inside Hakkimizda */
+.hakkimizda-quote { font-style: italic; color: rgba(0,0,0,0.75); margin-top: .75rem; }
+
+/* Smooth scrolling and anchor offset */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ensure anchored sections are visible below the navbar */
+section[id] {
+  scroll-margin-top: 80px;
+}
