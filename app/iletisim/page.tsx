@@ -84,7 +84,7 @@ export default function IletisimPage() {
   "name": "Yalçın Nakliye",
   "telephone": "+905399363912",
   "areaServed": ["Çiğli", "Bayraklı", "Menemen", "İzmir"],
-  "description": "Yalçın Nakliye - Çiğli ve İzmir çevresinde ev ve ofis taşıma hizmetleri. Asansörlü taşıma ve paketleme hizmetleri.",
+  "description": "Yalçın Nakliye - Çiğli ve İzmir çevresinde ev ve ofis taşıma hizmetleri. Taşıma ve paketleme hizmetleri.",
   "geo": {
     "@type": "GeoCoordinates",
     "latitude": "38.5245",

@@ -8,7 +8,7 @@ export const metadata = {
   title:
     "Yalçın Nakliye — Çiğli, Bayraklı, Menemen ve İzmir Nakliye Hizmetleri",
   description:
-    "Yalçın Nakliye — Çiğli, Bayraklı, Menemen ve İzmir bölgesinde güvenilir ev ve ofis taşıma hizmetleri. Asansörlü taşıma ve paketleme hizmetleri. Hemen iletişime geçin.",
+    "Yalçın Nakliye — Çiğli, Bayraklı, Menemen ve İzmir bölgesinde güvenilir ev ve ofis taşıma hizmetleri. Taşıma ve paketleme hizmetleri. Hemen iletişime geçin.",
 };
 
 export default function Home() {
@@ -22,13 +22,13 @@ export default function Home() {
             </h1>
             <p className="mt-4 text-lg text-zinc-700 dark:text-zinc-300 leading-relaxed">
               Çiğli, Bayraklı, Menemen ve tüm İzmir bölgesinde profesyonel
-              nakliye hizmetleri. Asansörlü taşıma ve paketleme hizmetleri
-              hizmetlerle yanınızdayız.
+              nakliye hizmetleri. Taşıma ve paketleme hizmetleri
+              ile yanınızdayız.
             </p>
 
             <ul className="mt-6 list-disc pl-5 text-zinc-700 dark:text-zinc-300">
               <li>Ev taşıma ve ofis taşımacılığı</li>
-              <li>Asansörlü taşıma ve montaj</li>
+              <li>Güvenli taşıma</li>
               <li>Paketleme, ambalajlama ve özenli taşıma</li>
             </ul>
 
@@ -57,7 +57,7 @@ export default function Home() {
             Yalçın Nakliye olarak Çiğli ve İzmir merkezli hizmetlerimizin
             yanında şehirler arası taşımacılıkta da deneyimliyiz. İzmir'den
             Türkiye içindeki tüm şehirlere düzenli ve güvenli taşıma yapıyoruz.
-            Eşyalarınızı özenle paketliyor, montaj ve asansörlü taşıma ihtiyaçlarını
+            Eşyalarınızı özenle paketliyor, montaj ve taşıma ihtiyaçlarını
             karşılıyor, teslimatlarda özen gösteriyoruz. Teslimatlarda ekstra
             önlemler alıyor; eşyalarınızı uygun ambalajlama, sabitleme ve
             taşıma teknikleriyle güvenli biçimde naklediyoruz. Tecrübeli
