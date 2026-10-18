@@ -1,21 +1,29 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import NavBar from "./components/NavBar";
-import { Geist, Geist_Mono } from "next/font/google";
+import Footer from "./components/Footer";
+import FloatingActions from "./components/FloatingActions";
+import Lightbox from "./components/Lightbox";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
+  variable: "--font-jakarta",
+  weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
 
 export const metadata: Metadata = {
-  title: "Yalçın Nakliye",
-  description: "Çiğli ve İzmir'de profesyonel nakliye hizmetleri.",
+  title: "Yalçın Nakliye — Çiğli, Karşıyaka, Menemen & İzmir Evden Eve Nakliyat",
+  description: "İzmir Çiğli merkezli profesyonel evden eve nakliyat, ofis taşımacılığı, özenli ambalajlama ve şehirler arası güvenli nakliye hizmetleri. 7/24 Kesintisiz Destek.",
+  keywords: ["çiğli nakliye", "izmir evden eve nakliyat", "karşıyaka nakliyat", "menemen nakliye", "şehirler arası nakliyat", "ev taşıma izmir", "yalçın nakliye"],
+  authors: [{ name: "Yalçın Nakliye" }],
 };
 
 export default function RootLayout({
@@ -24,13 +32,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="tr">
-      <body
-        // varsayılan tema: kırmızıya yakın - `theme-red`
-        className={`${geistSans.variable} ${geistMono.variable} antialiased theme-red`}
-      >
+    <html lang="tr" className="scroll-smooth">
+      <body className={`${jakarta.variable} font-sans antialiased text-slate-800 bg-slate-50 flex flex-col min-h-screen selection:bg-orange-500 selection:text-white`}>
         <NavBar />
-        <main>{children}</main>
+        <main className="flex-1">{children}</main>
+        <Footer />
+        <FloatingActions />
+        <Lightbox />
       </body>
     </html>
   );
